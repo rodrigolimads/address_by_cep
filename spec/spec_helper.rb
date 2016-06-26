@@ -17,6 +17,8 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
+  config.alias_it_should_behave_like_to :it_has_behavior, 'has behavior:'
+
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end

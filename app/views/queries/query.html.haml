@@ -1,0 +1,13 @@
+%h2 Pesquisa de endereço
+
+.search-form
+  = form_for(@query_form, url: search_cep_path, remote: true, method: :get, class: 'form') do |f|
+    .fields
+      = f.label :cep
+      = f.text_field :cep, maxlength: 8, size: 15
+    .buttons
+      = f.submit 'search'
+
+.query-result
+
+.query-history
