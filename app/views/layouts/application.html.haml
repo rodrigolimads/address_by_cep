@@ -21,9 +21,13 @@
   %body
     .navbar.navbar-default.navbar-static-top
       .container
-        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-        = link_to('Teste Gallerr - Address By Cep', root_path, class: 'navbar-brand')
-
+        .navbar-header.pull-left
+          = link_to('Teste Gallerr - Address By Cep', root_path, class: 'navbar-brand')
+        - if current_user.present?
+          .navbar-header.pull-right
+            %p.navbar-text
+              %b=current_user.email
+              = link_to 'Logout', sign_out_path, method: :delete
     .container
       .row
         .col-lg-12.input-ajax-flashes

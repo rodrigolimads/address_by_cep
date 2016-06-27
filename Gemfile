@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'rest-client'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry-byebug'
