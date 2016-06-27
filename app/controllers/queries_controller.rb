@@ -1,6 +1,7 @@
 class QueriesController < ApplicationController
   def query
     @query_form = QueryForm.new
+    @queries    = Query.successful.order('id DESC')
   end
 
   def search_cep

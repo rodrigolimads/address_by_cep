@@ -8,8 +8,9 @@ class QueryCepService
 
   def find
     begin
-      hash = JSON.parse RestClient.get @url
-      objectify(hash)
+      response = RestClient.get @url
+      register_integration(response)
+      ObjectifiedResponseService.new(response).object
     rescue RestClient::ResourceNotFound => e
       { error: "CEP #{@cep} não encontrado!" }
     rescue RestClient::Exception => e
@@ -18,11 +19,7 @@ class QueryCepService
   end
 
   private
-  def objectify(hash)
-    OpenStruct.new(underscore_keys(hash))
-  end
-
-  def underscore_keys(hash)
-    hash.transform_keys! {|k| k.underscore }
+  def register_integration(response)
+    Query.create!( cep: @cep, status: response.code.eql?(200) ? 1 : 0,  response: response )
   end
 end

@@ -1,0 +1,22 @@
+.query-history.collapse
+  .row
+    .col-lg-10
+      %h4 Histórico de pesquisas
+    .col-sm-10
+      %table.table{id: 'address-container'}
+        %thead
+          %tr
+            %th Cep
+            %th Endereço
+            %th Bairro
+            %th Cidade
+            %th Estado
+        %tbody
+          - collection.each do |query|
+            - result = ObjectifiedResponseService.new(query.response).object
+            %tr
+              %td=result.cep
+              %td="#{result.tipo_de_logradouro} #{result.logradouro}"
+              %td=result.bairro
+              %td=result.cidade
+              %td=result.estado

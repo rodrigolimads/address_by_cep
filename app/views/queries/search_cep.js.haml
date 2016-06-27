@@ -1,9 +1,9 @@
 $('.query-result').html('');
-$('.error').remove();
+$('.alert-danger').remove();
 
-- if @query_form.errors.blank?
-  $('.query-result').append("#{escape_javascript render 'result'}");
-- else
-  $('#query_form_cep').
-  parent().
-  append("<span class='error'>#{escape_javascript @query_form.errors.messages.dig(:cep).first} </span>");
+- if @query_form.errors.blank? 
+  - unless @result.is_a?(Hash)
+    $('.query-result').append("#{escape_javascript render 'result'}");
+    $('#address-container tbody').prepend("#{escape_javascript table_line}");  
+  - else
+    $('.input-ajax-flashes').prepend("#{escape_javascript error_flash_line}");
