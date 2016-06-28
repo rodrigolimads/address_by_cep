@@ -72,7 +72,7 @@ RSpec.describe QueryCepService, type: :service do
       end
 
       it 'have a error message' do
-        expect(invalid_response.dig(:error)).to eq('CEP 12345678 não encontrado!')
+        expect(invalid_response.dig(:error)).to eq('Could not find the zip code 12345678')
       end
     end
   end

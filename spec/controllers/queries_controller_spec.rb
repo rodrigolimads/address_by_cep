@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 describe QueriesController, type: :controller do
+  let(:user) { create(:user) }
   render_views
 
   describe "GET 'query'" do
     before do
+      sign_in :user, user
       get :query
     end
 
@@ -32,3 +34,4 @@ describe QueriesController, type: :controller do
     end
   end
 end
+
