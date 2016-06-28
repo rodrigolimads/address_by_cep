@@ -12,9 +12,9 @@ class QueryCepService
       register_integration(response)
       ObjectifiedResponseService.new(response).object
     rescue RestClient::ResourceNotFound => e
-      { error: "CEP #{@cep} não encontrado!" }
+      { error: I18n.t('errors.api.not_found', zipcode: @cep) }
     rescue RestClient::Exception => e
-      { error: 'Não foi possível acessar a API pública de consulta de CEPs' }
+      { error: I18n.t('errors.api.general') }
     end
   end
 

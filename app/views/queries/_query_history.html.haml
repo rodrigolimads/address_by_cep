@@ -1,16 +1,16 @@
 .query-history.collapse
   .row
     .col-lg-10
-      %h4 Histórico de pesquisas
+      %h4= t('query_history.title')
     .col-sm-10
       %table.table{id: 'address-container'}
         %thead
           %tr
-            %th Cep
-            %th Endereço
-            %th Bairro
-            %th Cidade
-            %th Estado
+            %th= t('query_history.cep')
+            %th= t('query_history.address')
+            %th= t('query_history.neighborhood')
+            %th= t('query_history.city')
+            %th= t('query_history.state')
         %tbody
           - collection.each do |query|
             - result = ObjectifiedResponseService.new(query.response).object

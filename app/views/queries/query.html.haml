@@ -1,18 +1,18 @@
 .page-header
-  %h2 Pesquisa de endereços
+  %h2= t('query.title')
 
 = form_for @query_form, url: search_cep_path, remote: true, method: :get, html: { class: "form form-horizontal query" } do |f|
   .form-group
-    = f.label :cep, class: 'control-label col-lg-2'
+    = f.label :cep, t('query.zipcode'), class: 'control-label col-lg-2'
     .col-lg-3
       = f.text_field :cep, class: 'form-control'
     = f.error_span(:cep)
 
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.submit 'Buscar', class: 'btn btn-primary'
-      = link_to 'Visualizar histórico', '#', id: 'show-history', :class => 'btn btn-default'
-      = link_to 'Cancelar', root_path, :class => 'btn btn-default'
+      = f.submit t('query.find'), class: 'btn btn-primary'
+      = link_to t('query.show_history'), '#', id: 'show-history', :class => 'btn btn-default'
+      = link_to t('query.cancel'), root_path, :class => 'btn btn-default'
 
 .query-result
 

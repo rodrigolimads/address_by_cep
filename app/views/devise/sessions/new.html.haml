@@ -1,0 +1,7 @@
+#login-splash.jumbotron
+  .row.centered
+    .col-lg-12
+      %h3= t('login.title')
+      %p= t('login.description')
+      %hr
+      = link_to t('login.link_text'), user_omniauth_authorize_path(:facebook), class: 'btn btn-primary'

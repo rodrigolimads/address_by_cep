@@ -6,10 +6,10 @@ $( document ).ready(function() {
 
     if (css === 'none') {
       element.collapse('show');
-      $(this).text('Ocultar histórico');
+      $(this).text('Hide history');
     }else{
       element.collapse('hide');
-      $(this).text('Visualizar histórico');
+      $(this).text('Show history');
     }    
   });
 });

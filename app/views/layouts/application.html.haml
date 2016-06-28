@@ -22,7 +22,7 @@
     .navbar.navbar-default.navbar-static-top
       .container
         .navbar-header.pull-left
-          = link_to('Teste Gallerr - Address By Cep', root_path, class: 'navbar-brand')
+          = link_to(t('login.title'), root_path, class: 'navbar-brand')
         - if current_user.present?
           .navbar-header.pull-right
             %p.navbar-text
