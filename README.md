@@ -13,12 +13,10 @@ Things you may want to cover:
 * System dependencies
   - Postgresql
   - nodeJs
+  - phantonJs
 
 * Database creation
   - rake db:create
-
-* Database initialization
-  - rake db:seed
 
 * How to run the test suite
   - Please execute rspec before committing
