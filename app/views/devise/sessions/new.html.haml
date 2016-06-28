@@ -4,4 +4,4 @@
       %h3= t('login.title')
       %p= t('login.description')
       %hr
-      = link_to t('login.link_text'), user_omniauth_authorize_path(:facebook), class: 'btn btn-primary'
+      = link_to t('login.link_text'), user_facebook_omniauth_authorize_path, class: 'btn btn-primary'

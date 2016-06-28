@@ -8,14 +8,15 @@ en:
     find: Find
     show_history: Show history
     cancel: Cancel
-    founded_zipcode: 'Zip code founded:'
+    found_zipcode: 'Zip code found:'
+    zipcode: Zip code
   query_history:
     title: Search history
     cep: Zip code
     address: Address
     neighborhood: Neighborhood
     city: City
-    state: state
+    state: State
   errors:
     api:
       not_found: "Could not find the zip code %{zipcode}"
