@@ -21,4 +21,8 @@ module QueriesHelper
     HTML
     string.html_safe
   end
+
+  def field_error
+    content_tag(:span, @query_form.errors.messages.dig(:cep).first, class: 'text-error')
+  end
 end

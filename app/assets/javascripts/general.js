@@ -12,4 +12,11 @@ $( document ).ready(function() {
       $(this).text('Show history');
     }    
   });
+
+  $( "#new_query_form" ).submit(function( event ) {
+    $('.query-result').html('');
+    $('.alert-danger').remove();
+    $('.text-error').remove();
+    $('.form-group').removeClass('has-error');
+  });
 });

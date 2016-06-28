@@ -9,3 +9,7 @@
 .query-history {
   margin-top: 50px;
 }
+
+.text-error {
+  color: #a94442;
+}
