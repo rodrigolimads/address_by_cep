@@ -7,11 +7,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to new_user_registration_url
+      set_flash_message(:error, :failure, :kind => "Facebook", reason: 'we had problems with your facebook account') if is_navigational_format?
+      redirect_to new_user_session_path
     end
   end
 
   def failure
-    redirect_to root_path
+    redirect_to new_user_session_path
   end
 end
